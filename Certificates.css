@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Subpage Navbar Override (Keeps Navbar Visible)
+   ========================================================================== */
+nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar a {
+    color: var(--dark) !important;
+}
+
+.navbar a:hover {
+    color: var(--primary-blue) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode Subpage Navbar Override
+   -------------------------------------------------------------------------- */
+/* Flips the forced white glass to dark glass when Dark Mode is active */
+body.dark-mode nav {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* Ensures the text is bright white against the dark glass */
+body.dark-mode .navbar a {
+    color: #F8FAFC !important;
+}
+
+/* ==========================================================================
+   Certificates Page Layout
+   ========================================================================== */
+#certificates-page {
+    /* 150px top padding pushes content safely below the fixed navbar */
+    padding: 150px 5% 100px;
+    background-color: var(--light); /* Solid background for curtain footer */
+    min-height: 100vh;
+}
+
+.certificate-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.certificate-container h1 {
+    color: var(--primary-blue);
+    font-size: var(--font-section);
+    margin-bottom: 60px;
+}
+
+/* ==========================================================================
+   Sleek Certificate Cards
+   ========================================================================== */
+.certi-cards {
+    display: grid;
+    /* Automatically creates 1, 2, or 3 columns depending on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* Base Card Styling */
+.card {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03); /* Extremely subtle border for crispness */
+    overflow: hidden; /* Keeps the zoomed image contained inside the card borders */
+    
+    /* Prepares the card for a smooth hover animation */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Card Heading */
+.card h3 {
+    color: var(--dark);
+    font-size: var(--font-sub);
+    margin-bottom: 25px;
+    transition: color 0.3s ease; /* Smooth color shift on hover */
+}
+
+/* Certificate Image Container */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft shadow specifically for the paper */
+    display: block;
+    
+    /* Prepares the image for the zoom effect */
+    transition: transform 0.5s ease;
+}
+
+/* ==========================================================================
+   The "Sleek Zoom" Hover Effects
+   ========================================================================== */
+   
+/* 1. The whole card lifts off the page */
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* 2. The title turns blue */
+.card:hover h3 {
+    color: var(--primary-blue);
+}
+
+/* 3. The certificate image zooms slightly toward the user */
+.card:hover img {
+    transform: scale(1.04);
+}

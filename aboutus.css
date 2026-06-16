@@ -1,0 +1,147 @@
+/* ==========================================================================
+   1. About Us - Hero Section (.page1)
+   ========================================================================== */
+.page1 {
+    /* Replace the URL with your actual About Us hero image */
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('./assets/images/aboutus_pageBack.avif') center/cover no-repeat;
+    height: 95vh; /* Slightly shorter than the homepage hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Pushes content slightly down so it isn't hidden behind the navbar */
+    padding-top: 60px; 
+}
+
+.hero-aboutus h3 {
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: var(--font-sub);
+    margin-bottom: 10px;
+}
+
+.hero-aboutus h1 {
+    font-size: var(--font-hero);
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   2. How It Started (.page2)
+   ========================================================================== */
+.page2 {
+    padding: 100px 5%;
+    background-color: var(--white); /* Solid background for curtain footer */
+}
+
+.parentpage2aboutus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.leftpage2aboutus {
+    flex: 1 1 500px;
+}
+
+.rightpage2aboutus {
+    flex: 1 1 400px;
+}
+
+.leftpage2aboutus h2 {
+    color: var(--primary-blue);
+    font-size: var(--font-section);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* A nice decorative line under the heading */
+.leftpage2aboutus h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-green);
+    border-radius: 2px;
+}
+
+.leftpage2aboutus p {
+    font-size: var(--font-p);
+    line-height: 1.8;
+    color: #475569;
+}
+
+.rightpage2aboutus img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+.rightpage2aboutus img:hover {
+    transform: translateY(-10px);
+}
+
+/* ==========================================================================
+   3. What is NayePankh? (.page3)
+   ========================================================================== */
+.page3 {
+    padding: 100px 5% 150px; /* Extra bottom padding before the footer reveals */
+    background-color: var(--light); /* Solid background for curtain footer */
+}
+
+.page3 h1 {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: var(--font-section);
+    margin-bottom: 40px;
+}
+
+.page3 p {
+    /* Limits the width of the text block. 
+       Reading lines that are too wide causes eye fatigue! */
+    max-width: 900px; 
+    margin: 0 auto;
+    font-size: var(--font-p);
+    line-height: 1.9; /* Slightly increased line-height for a large block of text */
+    color: var(--dark);
+    
+    /* Adds a sleek premium "card" look to the text block */
+    background: var(--white);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ==========================================================================
+   4. Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+    .page1 {
+        height: 50vh;
+    }
+
+    .parentpage2aboutus {
+        flex-direction: column-reverse; /* Puts the image on top of the text on mobile */
+        text-align: center;
+        gap: 40px;
+    }
+
+    /* Centers the decorative line on mobile */
+    .leftpage2aboutus h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .page3 p {
+        padding: 30px 20px;
+        text-align: left;
+    }
+}

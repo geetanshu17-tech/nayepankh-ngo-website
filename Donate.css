@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Subpage Navbar Override
+   ========================================================================== */
+nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar a { color: var(--dark) !important; }
+.navbar a:hover { color: var(--primary-blue) !important; }
+
+/* --------------------------------------------------------------------------
+   Dark Mode Subpage Navbar Override
+   -------------------------------------------------------------------------- */
+/* Flips the forced white glass to dark glass when Dark Mode is active */
+body.dark-mode nav {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* Ensures the text is bright white against the dark glass */
+body.dark-mode .navbar a {
+    color: #F8FAFC !important;
+}
+
+/* ==========================================================================
+   Donate Hero & Typography
+   ========================================================================== */
+#donate-hero {
+    padding: 150px 5% 50px;
+    background-color: var(--light);
+    text-align: center;
+}
+
+.hero-text h1 {
+    color: var(--primary-blue);
+    font-size: var(--font-section);
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: var(--font-sub);
+    color: var(--dark);
+    margin-bottom: 50px;
+}
+
+/* ==========================================================================
+   5-Image Center-Weighted Gallery
+   ========================================================================== */
+.hero-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-img {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    background-color: #e2e8f0; /* Placeholder color until you add images */
+}
+
+.gallery-img:hover img {
+    transform: scale(1.05);
+}
+
+/* Specific sizing for the staggering effect */
+.img-small { width: 15%; height: 250px; }
+.img-medium { width: 22%; height: 350px; }
+.img-large { width: 34%; height: 450px; z-index: 2; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+
+/* ==========================================================================
+   Donate Content Layout (Sticky Sidebar)
+   ========================================================================== */
+#donate-content {
+    padding: 80px 5% 150px;
+    background-color: var(--white);
+}
+
+.donate-wrapper {
+    display: flex;
+    gap: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: flex-start; /* Crucial for sticky to work correctly */
+}
+
+/* Left Side: The Letter */
+.donate-letter {
+    flex: 1 1 60%;
+}
+
+.donate-letter h3 {
+    font-size: var(--font-sub);
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.donate-letter p {
+    font-size: var(--font-p);
+    line-height: 1.9;
+    color: #334155;
+    margin-bottom: 20px;
+}
+
+.quote-block {
+    margin: 40px 0;
+    padding: 30px 40px;
+    background-color: var(--light);
+    border-left: 4px solid var(--accent-green);
+    border-radius: 0 12px 12px 0;
+}
+
+.quote-block p {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.letter-signoff {
+    margin-top: 50px;
+}
+
+.letter-signoff h4 {
+    font-size: 22px;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+/* Right Side: Sticky Donation Card */
+.donate-action-sidebar {
+    flex: 1 1 35%;
+    /* The Magic Sticky Code */
+    position: sticky;
+    top: 120px; /* Space below the navbar */
+}
+
+.action-card {
+    background-color: var(--light);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.action-card h2 {
+    color: var(--primary-blue);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.action-card p {
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.razorpay-embed-btn {
+    margin-bottom: 20px;
+}
+
+.secure-badge {
+    margin-top: 25px;
+    font-size: 14px;
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+.secure-badge i {
+    margin-right: 5px;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Stack the content vertically on tablets/mobile */
+    .donate-wrapper {
+        flex-direction: column-reverse; /* Puts the Donate button on top */
+    }
+
+    .donate-action-sidebar {
+        position: static; /* Disables sticky behavior when stacked */
+        width: 100%;
+    }
+
+    /* --- THE GALLERY FIX: Sleek Mobile "Bento" Grid --- */
+    .hero-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+        gap: 15px;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .gallery-img {
+        width: 100% !important; /* Overrides the desktop percentage widths */
+    }
+
+    /* Forces the Large Center image to the top and spans both columns */
+    .img-large { 
+        grid-column: span 2; 
+        order: -1; /* Pushes this specific image to the very top */
+        height: 350px; 
+    }
+
+    /* The other 4 images create a 2x2 grid underneath */
+    .img-medium, .img-small { 
+        height: 180px; 
+    }
+}
+
+/* Specific tweaks for very small phones */
+@media (max-width: 480px) {
+    .img-large { 
+        height: 250px; 
+    }
+    
+    .img-medium, .img-small { 
+        height: 140px; 
+    }
+}

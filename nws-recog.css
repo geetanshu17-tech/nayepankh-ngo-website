@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Newspaper Recognition Gallery
+   ========================================================================== */
+
+/* The main section wrapper */
+
+/* ==========================================================================
+   Subpage Navbar Override
+   ========================================================================== */
+/* Forces the navbar to be fully visible (frosted glass) immediately 
+   since there is no dark hero image on this page */
+nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Forces the links to be dark immediately */
+.navbar a {
+    color: var(--dark) !important;
+}
+
+/* Ensure the hover effect stays primary blue */
+.navbar a:hover {
+    color: var(--primary-blue) !important;
+}
+/* --------------------------------------------------------------------------
+   Dark Mode Subpage Navbar Override
+   -------------------------------------------------------------------------- */
+/* Flips the forced white glass to dark glass when Dark Mode is active */
+body.dark-mode nav {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* Ensures the text is bright white against the dark glass */
+body.dark-mode .navbar a {
+    color: #F8FAFC !important;
+}
+
+.news-recog {
+    /* 150px top padding pushes the content below your fixed transparent navbar */
+    padding: 150px 5% 100px; 
+    background-color: var(--light);
+    min-height: 100vh;
+}
+
+.news-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.news-header h2 {
+    color: var(--primary-blue);
+    font-size: var(--font-section);
+}
+
+/* ==========================================================================
+   Bento Box / Collage Grid Layout
+   ========================================================================== */
+.news-container {
+    display: grid;
+    /* Uses a 12-column grid to perfectly mimic your percentage widths */
+    grid-template-columns: repeat(12, 1fr); 
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.item {
+    height: 300px; /* Forces all rows to be a clean, uniform height */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Ensures images perfectly fill their boxes without squishing */
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Subtle zoom effect on hover */
+.item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Map your percentage logic to the 12 columns --- */
+
+/* Row 1 */
+.item:nth-child(1) { grid-column: span 5; } /* ~40% */
+.item:nth-child(2) { grid-column: span 4; } /* ~30% */
+.item:nth-child(3) { grid-column: span 3; } /* ~25% */
+
+/* Row 2 */
+.item:nth-child(4) { grid-column: span 3; } /* ~25% */
+.item:nth-child(5) { grid-column: span 5; } /* ~40% */
+.item:nth-child(6) { grid-column: span 4; } /* ~30% */
+
+/* Row 3 */
+.item:nth-child(7) { grid-column: span 5; } /* ~40% */
+.item:nth-child(8) { grid-column: span 4; } /* ~30% */
+.item:nth-child(9) { grid-column: span 3; } /* ~25% */
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Converts to a 2-column layout on tablets */
+    .item { height: 250px; }
+    .item:nth-child(n) { grid-column: span 6; }
+}
+
+@media (max-width: 600px) {
+    /* Converts to a 1-column layout on mobile phones */
+    .item { height: 250px; }
+    .item:nth-child(n) { grid-column: span 12; }
+}
