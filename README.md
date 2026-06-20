@@ -1,4 +1,5 @@
-# NayePankh Foundation 🕊️
+<img width="1761" height="802" alt="image" src="https://github.com/user-attachments/assets/3b582453-d063-43ab-8107-40ce0f406af7" />
+# NayePankh Foundation 
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -64,15 +65,4 @@ cd nayepankh-ngo-website
 - You can simply double-click the `index.html` file, or use a live server extension in your code editor for a better development experience.
 
 
-## 📸 Screenshots
-
-| Light Mode (Home) | Dark Mode (Impact Section) |
-| :---: | :---: |
-| <img src="./assets/snapshot/lighthero.png" width="400" alt="Home Page Light Mode"/> | <img src="./assets/snapshot/darkimpact.png" width="400" alt="Impact Section Dark Mode"/> |
-
-| Mobile Bento Grid (Donate) | Curtain Footer Reveal |
-| :---: | :---: |
-| <img src="./assets/snapshot/mobile-bento-grid.png" width="400" alt="Mobile Donate Page"/> | <img src="./assets/snapshot/curtain-fall-footer.png" width="400" alt="Curtain Footer Reveal"/> |
-
----
 *Designed and Developed with 💻 and ☕ by geetanshu17-tech*
